@@ -1,0 +1,4 @@
+cloudflare-dist/
+index-before-*.html
+index-editable.html
+assets/*.png
