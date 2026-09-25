@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#100a13">
+  <meta name="theme-color" content="#100811">
   <meta name="robots" content="noindex, nofollow">
   <title>Mở Khóa Chuyển Đổi | Vũ Kim Khánh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,14 +86,6 @@
     .flow-arrow::before { content: ""; position: absolute; top: -3px; left: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-light); box-shadow: 0 0 15px var(--gold-light); animation: flow 3.4s ease-in-out infinite; }
     @keyframes flow { from { left: 0; opacity: .2; } 50% { opacity: 1; } to { left: calc(100% - 8px); opacity: .2; } }
     .media-caption { margin: 18px 0 0; padding: 13px 15px; border: 1px solid rgba(239,206,158,.2); border-radius: 10px; color: #cbb9cf; font-size: 12px; line-height: 1.5; }
-    .shorts-intro { display: grid; justify-items: center; gap: 15px; }
-    .machine-visual.video-only { padding: 0; border: 0; background: transparent; box-shadow: none; transform: none; }
-    .machine-visual.video-only::before { content: none; }
-    .shorts-frame { position: relative; width: min(100%, 315px); aspect-ratio: 9 / 16; overflow: hidden; border: 0; border-radius: 0; background: #000; box-shadow: none; }
-    .shorts-frame::before { content: none; }
-    .shorts-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .video-fallback { margin: 10px 0 0 !important; color: #bfaec2 !important; font-size: 11px !important; line-height: 1.5 !important; text-align: center; }
-    .video-fallback a { color: #ead09c; text-underline-offset: 3px; }
     .methods { background: linear-gradient(180deg, #120b18, #160d1d 52%, #120b18); }
     .method-intro { max-width: 920px; margin-bottom: 42px; }
     .method-intro h2 { margin-bottom: 15px; }
@@ -136,33 +127,14 @@
     .speaker-photo { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid rgba(210,169,213,.35); border-radius: 26px; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
     .speaker-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .speaker-copy p { font-size: 17px; }
-    .events { overflow: hidden; background: radial-gradient(ellipse 54% 78% at 0% 42%, rgba(171,39,129,.22), transparent 74%), linear-gradient(120deg, #2b182e, #19101e 72%); }
-    .events-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(270px,.55fr); gap: 42px; align-items: end; margin-bottom: 34px; }
-    .events h2 { max-width: 790px; margin: 0; }
-    .events-intro { margin: 0; color: #d1c2d3; font-size: 15px; line-height: 1.7; }
-    .events-toolbar { display: flex; justify-content: flex-end; gap: 9px; margin: 0 0 15px; }
-    .events-button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(226,143,204,.34); border-radius: 50%; color: #f4ddea; background: rgba(94,35,82,.32); font: inherit; font-size: 19px; cursor: pointer; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
-    .events-button:hover { transform: translateY(-2px); border-color: rgba(235,174,215,.65); background: rgba(160,43,127,.3); }
-    .events-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 31.5%); gap: 18px; padding: 5px 1px 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-    .events-track::-webkit-scrollbar { display: none; }
-    .event-card { min-width: 0; scroll-snap-align: start; }
-    .event-image-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; padding: 22px; overflow: hidden; border: 1px dashed rgba(226,128,197,.47); border-radius: 18px; background: radial-gradient(circle at 68% 23%, rgba(202,44,154,.3), transparent 56%), linear-gradient(145deg, #492045, #26172b 76%); box-shadow: 0 20px 45px rgba(0,0,0,.16); text-align: center; }
-    .event-image-placeholder::after { content: attr(data-index); position: absolute; top: 13px; right: 14px; color: rgba(248,225,242,.58); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
-    .event-image-placeholder span { color: #f5e7f1; font-size: 13px; font-weight: 800; line-height: 1.55; }
-    .event-card p { margin: 13px 4px 0; color: #baa8bd; font-size: 12px; line-height: 1.55; }
-    .event-card p strong, .event-card p span { display: block; }
-    .event-card p strong { margin-bottom: 4px; color: #f2e6ef; font-size: 13px; }
     .proof { background: #100b15; }
     .proof h2 { max-width: 900px; margin-bottom: 36px; }
-    .proof-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; margin-bottom: 31px; }
-    .proof-card { min-width: 0; padding: 10px; border: 1px solid rgba(157,111,165,.25); border-radius: 20px; background: #211429; transition: transform .25s ease, border-color .25s ease; }
+    .proof-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 21px; margin-bottom: 31px; }
+    .proof-card { padding: 15px; border: 1px solid rgba(157,111,165,.25); border-radius: 22px; background: #211429; transition: transform .25s ease, border-color .25s ease; }
     .proof-card:hover { transform: translateY(-4px); border-color: rgba(198,151,204,.45); }
-    .student-photo-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 9 / 16; padding: 18px; overflow: hidden; border: 1px dashed rgba(206,160,211,.4); border-radius: 13px; background: radial-gradient(circle at 50% 32%, rgba(164,54,134,.31), transparent 58%), linear-gradient(160deg, #362039, #201624); text-align: center; }
-    .student-photo-placeholder::after { content: attr(data-index); position: absolute; top: 13px; right: 13px; color: rgba(248,225,242,.52); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
-    .student-photo-placeholder span { color: #f2e4f1; font-size: 13px; font-weight: 700; line-height: 1.55; }
-    .proof-card p { margin: 14px 6px 6px; color: #bdaac1; font-size: 12px; line-height: 1.55; }
-    .proof-card p strong, .proof-card p span { display: block; }
-    .proof-card p strong { margin-bottom: 5px; color: #f2e7f0; font-size: 13px; }
+    .video-placeholder { display: grid; place-items: center; min-height: 295px; padding: 28px; border: 1px dashed rgba(206,160,211,.4); border-radius: 13px; background: radial-gradient(circle at center, rgba(94,43,102,.4), #2c1933 78%); text-align: center; }
+    .video-placeholder span { max-width: 340px; color: #f2e4f1; font-size: 16px; font-weight: 700; line-height: 1.55; }
+    .proof-card p { margin: 15px 8px 4px; color: #bdaac1; font-size: 12px; }
     .registration { background: radial-gradient(ellipse 50% 75% at 86% 42%, rgba(136,71,137,.24), transparent 78%), linear-gradient(135deg, #23122b, #160d1e 72%); }
     .registration .section-kicker { color: var(--gold-light); }
     .registration-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(45px, 7vw, 100px); align-items: start; }
@@ -187,10 +159,6 @@
     .footer p { margin-bottom: 9px; font-size: 13px; line-height: 1.65; }
     .footer-title { margin-bottom: 18px !important; color: #f5eaf3; font-size: 17px !important; font-weight: 800; }
     .footer-links { text-align: right; }
-    .footer-disclaimer { position: relative; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.1); }
-    .footer-disclaimer::before { content: ""; position: absolute; top: -1px; left: 0; width: min(210px, 42vw); height: 1px; background: linear-gradient(90deg, #d21aa3, #e4b75f 72%, transparent); }
-    .footer-disclaimer p { max-width: 1080px; margin-bottom: 12px; color: #a997aa; font-size: 12px; line-height: 1.75; }
-    .footer-disclaimer .disclaimer-note { margin-bottom: 0; color: #cdbfd0; font-style: italic; }
     @media (max-width: 900px) {
       .machine-layout { grid-template-columns: 1fr; gap: 50px; }
       .machine-copy, .machine-visual { grid-column: auto; grid-row: auto; }
@@ -204,9 +172,6 @@
       .pain-item { min-height: 0; }
       .hero-image { height: 590px; }
       .hero-content { padding-top: 430px; }
-      .events-head { grid-template-columns: 1fr; gap: 15px; }
-      .events-toolbar { justify-content: flex-start; }
-      .events-track { grid-auto-columns: minmax(300px, 48%); }
     }
     @media (max-width: 600px) {
       .shell { width: min(100% - 34px, 1180px); }
@@ -242,189 +207,12 @@
       .visual-placeholder { min-height: 240px; padding: 20px; }
       .visual-placeholder span { font-size: 13px; }
       .media-placeholder { min-height: 270px; padding: 22px; }
-      .proof-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .footer-grid { grid-template-columns: 1fr; }
+      .proof-grid, .footer-grid { grid-template-columns: 1fr; }
       .video-placeholder { min-height: 210px; }
       .registration-grid { gap: 36px; }
       .form-box { padding: 24px; }
       .footer { padding: 50px 0 58px; }
       .footer-links { text-align: left; }
-      .footer-disclaimer { margin-top: 30px; padding-top: 25px; }
-      .footer-disclaimer p { font-size: 11px; line-height: 1.7; }
-      .proof-grid { display: flex; gap: 14px; margin-right: -17px; padding-right: 17px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-      .proof-grid::-webkit-scrollbar { display: none; }
-      .proof-card { flex: 0 0 min(76vw, 286px); scroll-snap-align: start; }
-      .events-head { margin-bottom: 25px; }
-      .events-toolbar { display: none; }
-      .events-track { grid-auto-columns: min(84vw, 320px); margin-right: -17px; padding-right: 17px; }
-    }
-    /* Phương án B: nhịp sáng tối và các khối thông tin có cấu trúc. */
-    .pain { background: radial-gradient(ellipse 66% 90% at 8% 5%, rgba(107,52,109,.27), transparent 75%), #1b1021; }
-    .pain-item { min-height: 274px; border-radius: 4px 22px 22px 4px; border-left: 3px solid #b890c1; background: linear-gradient(145deg, #2b1931, #211327); }
-    .pain-item:nth-child(2) { border-left-color: #c49b67; }
-    .pain-item:nth-child(3) { border-left-color: #9d77b7; }
-    .pain-number { margin-bottom: 26px; font-size: 30px; line-height: 1.15; font-weight: 500; color: rgba(230,201,232,.45); }
-    .machine { background: radial-gradient(ellipse 60% 80% at 100% 80%, rgba(107,41,105,.3), transparent 70%), linear-gradient(115deg, #2d192a, #1b1120 72%); }
-    .machine-visual { transform: rotate(-1deg); }
-    .methods { background: #130e19; }
-    .method-row { gap: clamp(38px, 5vw, 76px); padding: 72px 0; }
-    .method-row:nth-of-type(3) { position: relative; }
-    .method-row:nth-of-type(3)::before { content: ""; position: absolute; inset: 20px -32px; z-index: 0; border-radius: 30px; background: linear-gradient(115deg, rgba(89,47,90,.23), rgba(62,32,63,.08)); pointer-events: none; }
-    .method-row:nth-of-type(3) > * { position: relative; z-index: 1; }
-    .method-number { display: inline-block; padding: 7px 13px; border: 1px solid rgba(215,177,219,.29); border-radius: 100px; color: #e2c6e5; }
-    .method-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 15px 0; border: 0; color: #f3ddba !important; }
-    .flow-step { display: inline-flex; align-items: center; min-height: 37px; padding: 8px 11px; border: 1px solid rgba(225,188,134,.34); border-radius: 10px; background: rgba(196,145,93,.09); font-size: 13px; line-height: 1.45; font-weight: 600; }
-    .flow-sep { color: #d5b482; font-size: 17px; font-weight: 400; }
-    .method-copy ul { gap: 0; padding: 0; list-style: none; counter-reset: ai-feature; }
-    .method-copy li { display: grid; grid-template-columns: 28px 1fr; gap: 11px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid rgba(213,170,217,.17); counter-increment: ai-feature; }
-    .method-copy li::before { content: counter(ai-feature, decimal-leading-zero); color: #d8b17d; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
-    .audience { background: radial-gradient(circle at 90% 13%, rgba(96,47,81,.3), transparent 35%), #25151f; }
-    .audience-list li { border-bottom-color: rgba(230,188,211,.17); }
-    .speaker { background: linear-gradient(118deg, #281525, #1b1020); }
-    .proof { background: #121116; }
-    .proof-card { border-color: rgba(206,191,202,.19); background: #1e1b22; }
-    .proof-card:hover { border-color: rgba(226,191,136,.44); }
-    .proof .video-placeholder { border-color: rgba(207,188,205,.32); background: radial-gradient(circle at center, rgba(107,62,111,.28), #25212a 78%); }
-    .registration { color: #271b29; background: radial-gradient(ellipse 65% 60% at 0 100%, rgba(195,164,122,.22), transparent 76%), #f0e7dc; }
-    .registration .section-kicker { color: #865d38; }
-    .registration h2 { color: #271b29; }
-    .registration-copy p { color: #55475a; }
-    .details-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 27px; padding: 0; list-style: none; }
-    .details-list li { min-width: 0; padding: 16px; border: 1px solid rgba(98,61,83,.2); border-radius: 14px; background: rgba(255,255,255,.41); color: #4d3a51; font-size: 14px; }
-    .details-list li:nth-child(n+5) { grid-column: 1 / -1; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(95,60,80,.18); border-radius: 0; background: transparent; }
-    .details-list strong { color: #3b213d; }
-    .form-box { border-color: rgba(127,81,114,.34); background: linear-gradient(150deg, #382039, #26182d 78%); box-shadow: 0 24px 70px rgba(69,35,55,.2); }
-    .final-invite { background: radial-gradient(circle at 85% 4%, rgba(91,42,98,.36), transparent 45%), #150d1b; }
-    @media (max-width: 900px) {
-      .method-row:nth-of-type(3)::before { inset: 14px -14px; }
-    }
-    @media (max-width: 600px) {
-      .pain-item { min-height: 0; }
-      .pain-number { margin-bottom: 14px; font-size: 25px; }
-      .machine-visual { transform: none; }
-      .method-flow { gap: 6px; }
-      .flow-step { min-height: 34px; padding: 6px 9px; font-size: 12px; }
-      .flow-sep { font-size: 14px; }
-      .details-list { grid-template-columns: 1fr; }
-      .details-list li:nth-child(n+5) { grid-column: auto; }
-    }
-    /* Phương án C: tím mận khói trên nền champagne dịu. */
-    :root {
-      --bg: #170e1b;
-      --bg-deep: #100b13;
-      --plum: #44234b;
-      --plum-light: #774b78;
-      --text: #f9f2f7;
-      --muted: #d3c2d3;
-    }
-    .hero { background: radial-gradient(ellipse 70% 50% at 50% 58%, rgba(119,75,120,.26), transparent 78%), #170e1b; }
-    .hero-image::after { background: linear-gradient(180deg, rgba(17,8,20,.04) 0%, rgba(17,8,20,.1) 39%, rgba(23,14,27,.6) 62%, #170e1b 91%), linear-gradient(90deg, rgba(34,12,37,.2), transparent 30%, transparent 70%, rgba(34,12,37,.2)); }
-    .pain { background: radial-gradient(ellipse 65% 90% at 8% 5%, rgba(119,75,120,.24), transparent 75%), #211426; }
-    .pain-item { border-color: rgba(185,137,190,.24); border-left-color: #b890c1; background: linear-gradient(145deg, #321d38, #29182f); }
-    .pain-item:hover { background: #38213f; }
-    .pain-item:nth-child(2) { border-left-color: #c49b67; }
-    .pain-item:nth-child(3) { border-left-color: #9d77b7; }
-    .machine { background: radial-gradient(ellipse 62% 85% at 100% 76%, rgba(135,72,131,.27), transparent 70%), linear-gradient(115deg, #3b203e, #241529 72%); }
-    .machine-visual { background: linear-gradient(145deg, rgba(119,65,124,.54), #321c37 56%, #24152b); }
-    .methods { background: linear-gradient(180deg, #180f1d, #211327 52%, #170e1b); }
-    .method-row:nth-of-type(3)::before { background: linear-gradient(115deg, rgba(119,75,120,.23), rgba(75,43,79,.08)); }
-    .method-visual { background: radial-gradient(circle at 47% 40%, rgba(119,75,120,.43), transparent 55%), linear-gradient(145deg, #35203b, #24152c 74%); }
-    .method-row.reverse .method-visual { background: radial-gradient(circle at 55% 46%, rgba(173,116,97,.16), transparent 60%), linear-gradient(145deg, #3a2340, #26162d 72%); }
-    .method-row:last-child .method-visual { background: radial-gradient(circle at 50% 28%, rgba(144,84,151,.4), transparent 58%), linear-gradient(145deg, #35203f, #211429 76%); }
-    .audience { background: radial-gradient(circle at 90% 13%, rgba(132,69,124,.25), transparent 37%), #301b30; }
-    .speaker { background: linear-gradient(118deg, #3a203b, #201324); }
-    .proof { background: #121116; }
-    .registration { isolation: isolate; color: #2b2030; background: radial-gradient(ellipse 65% 65% at 0 100%, rgba(170,137,160,.15), transparent 76%), #e8ddd5; }
-    .registration::before, .registration::after { content: ""; position: absolute; right: 0; left: 0; height: 72px; z-index: 0; pointer-events: none; }
-    .registration::before { top: 0; background: linear-gradient(180deg, #121116, rgba(71,49,68,.52) 41%, transparent); }
-    .registration::after { bottom: 0; background: linear-gradient(0deg, #170e1b, rgba(86,62,84,.35) 44%, transparent); }
-    .registration .shell { position: relative; z-index: 1; }
-    .registration .section-kicker { color: #865f45; }
-    .registration-copy p { color: #514151; }
-    .details-list li { border-color: rgba(85,53,80,.19); background: rgba(255,255,255,.4); }
-    .details-list li:nth-child(n+5) { border-bottom-color: rgba(85,53,80,.19); background: transparent; }
-    .form-box { background: linear-gradient(150deg, #44234b, #2c1933 78%); }
-    .final-invite { background: radial-gradient(circle at 85% 4%, rgba(119,75,120,.3), transparent 45%), #170e1b; }
-    .footer { background: #100b13; }
-    @media (max-width: 600px) {
-      .hero-image::after { background: linear-gradient(180deg, transparent 10%, rgba(23,14,27,.05) 45%, #170e1b 98%); }
-      .registration::before, .registration::after { height: 50px; }
-    }
-    /* Phương án D: thử magenta của ảnh tham chiếu trong ba section đầu. */
-    .hero { background: radial-gradient(ellipse 52% 42% at 78% 29%, rgba(185,30,145,.28), transparent 74%), #100a13; }
-    .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 43% 40% at 91% 24%, rgba(205,28,155,.42), transparent 75%), radial-gradient(ellipse 34% 24% at 78% 54%, rgba(192,25,145,.18), transparent 78%); animation: magenta-breathe 8s ease-in-out infinite alternate; }
-    .hero-image::after { background: linear-gradient(180deg, rgba(12,6,14,.08) 0%, rgba(12,6,14,.1) 38%, rgba(16,10,19,.58) 63%, #100a13 92%), linear-gradient(90deg, rgba(18,6,19,.2), transparent 30%, rgba(117,13,91,.09) 79%, rgba(18,6,19,.2)); }
-    .hero-sheen { background: linear-gradient(90deg, transparent 2%, rgba(200,39,153,.13) 48%, transparent 98%); }
-    .hero .title-pre { padding: 12px 20px; border-color: rgba(243,204,140,.82); color: #fff0ce; background: linear-gradient(110deg, rgba(112,30,94,.96), rgba(49,20,55,.94)); box-shadow: 0 0 0 3px rgba(185,38,143,.13), 0 12px 34px rgba(0,0,0,.24); font-size: 14px; font-weight: 800; letter-spacing: .09em; }
-    .hero-lead strong { background: linear-gradient(110deg, #e37dca, #f1b5df 49%, #c934a6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .pain { border-color: rgba(197,57,158,.2); background: radial-gradient(ellipse 55% 80% at 100% 0%, rgba(199,36,154,.24), transparent 76%), radial-gradient(ellipse 42% 70% at 0% 100%, rgba(102,31,107,.18), transparent 78%), #1c1120; }
-    .pain .section-kicker { color: #d579bd; }
-    .pain-item { overflow: hidden; border-color: rgba(204,82,172,.3); border-left-color: #d338a9; background: radial-gradient(circle at 10% 0%, rgba(204,42,155,.32), transparent 56%), linear-gradient(145deg, #3a1b38, #241626 75%); box-shadow: 0 22px 55px rgba(13,4,16,.19), inset 0 1px 0 rgba(255,255,255,.06); }
-    .pain-item:hover { border-color: rgba(229,115,196,.56); background: radial-gradient(circle at 10% 0%, rgba(218,53,171,.42), transparent 58%), linear-gradient(145deg, #41203e, #2c182d 75%); box-shadow: 0 22px 50px rgba(141,21,107,.24); }
-    .pain-item:nth-child(2) { border-left-color: #d9aa6d; background: radial-gradient(circle at 8% 0%, rgba(197,142,83,.18), transparent 59%), linear-gradient(145deg, #302031, #241626 75%); }
-    .pain-item:nth-child(2):hover { background: radial-gradient(circle at 8% 0%, rgba(205,153,93,.25), transparent 59%), linear-gradient(145deg, #38263a, #2c182d 75%); }
-    .pain-item:nth-child(3) { border-left-color: #9f5ab4; background: radial-gradient(circle at 8% 0%, rgba(141,74,167,.27), transparent 59%), linear-gradient(145deg, #2e1c38, #241626 75%); }
-    .pain-item:nth-child(3):hover { background: radial-gradient(circle at 8% 0%, rgba(157,87,184,.36), transparent 59%), linear-gradient(145deg, #382240, #2c182d 75%); }
-    .pain-number { color: rgba(232,157,208,.57); }
-    .pain-item:nth-child(2) .pain-number { color: rgba(233,198,148,.65); }
-    .pain-item:nth-child(3) .pain-number { color: rgba(194,156,215,.62); }
-    .pain-item::after { background: linear-gradient(90deg, transparent, rgba(207,61,165,.46), transparent); }
-    .machine { background: radial-gradient(ellipse 58% 75% at 97% 28%, rgba(197,28,149,.29), transparent 75%), linear-gradient(115deg, #2a1730, #1c1122 72%); }
-    .machine .section-kicker { color: #df86c5; }
-    .machine-visual { position: relative; overflow: hidden; border-color: rgba(228,112,193,.5); background: linear-gradient(145deg, #64245a 0%, #351d39 47%, #211426 100%); box-shadow: 0 30px 90px rgba(0,0,0,.22), 0 0 80px rgba(192,33,149,.22); }
-    .machine-visual::before { content: ""; position: absolute; inset: -35%; pointer-events: none; background: radial-gradient(circle at 28% 31%, rgba(226,79,181,.38), transparent 34%), radial-gradient(circle at 83% 72%, rgba(193,28,145,.22), transparent 38%); animation: magenta-breathe 9s ease-in-out infinite alternate-reverse; }
-    .machine-visual > * { position: relative; z-index: 1; }
-    .media-slot { border-color: rgba(235,145,207,.6); background: radial-gradient(circle at 20% 12%, rgba(205,61,160,.35), transparent 65%), #301a34; }
-    .media-slot.output { border-color: rgba(231,188,120,.47); background: radial-gradient(circle at center, rgba(154,106,63,.29), #362039 77%); }
-    .flow-arrow { background: linear-gradient(90deg, #c3339d, var(--gold-light)); }
-    .flow-arrow::before { background: #d750b5; box-shadow: 0 0 15px #d750b5; }
-    @keyframes magenta-breathe { from { opacity: .72; transform: scale(1); } to { opacity: 1; transform: scale(1.06); } }
-    /* Nhịp toàn trang: khối tối, mảng tím mận, viền sáng và một nhịp sáng ở form. */
-    .methods { background: radial-gradient(ellipse 52% 30% at 0% 44%, rgba(105,37,103,.17), transparent 78%), linear-gradient(180deg, #160e1b, #1d1122 52%, #160e1b); }
-    .method-row { border-top-color: rgba(203,79,169,.22); }
-    .method-row:nth-of-type(3)::before { background: linear-gradient(115deg, rgba(152,38,119,.18), rgba(88,43,92,.07)); }
-    .method-number { border-color: rgba(219,98,181,.36); color: #e6a7d3; background: rgba(144,33,111,.1); }
-    .method-row.reverse .method-number { border-color: rgba(219,174,113,.36); color: #e7c18b; background: rgba(174,111,48,.09); }
-    .method-visual { border-color: rgba(212,93,180,.45); background: radial-gradient(circle at 22% 19%, rgba(187,41,140,.3), transparent 57%), linear-gradient(145deg, #3e1d41, #211429 74%); box-shadow: 0 30px 80px rgba(0,0,0,.23), 0 0 52px rgba(170,30,130,.1); }
-    .method-row.reverse .method-visual { border-color: rgba(208,158,105,.36); background: radial-gradient(circle at 78% 19%, rgba(177,105,85,.21), transparent 57%), linear-gradient(145deg, #3a203c, #211429 74%); }
-    .method-row:last-child .method-visual { background: radial-gradient(circle at 76% 18%, rgba(198,48,159,.34), transparent 58%), linear-gradient(145deg, #3d1c47, #211429 74%); }
-    .visual-placeholder { border-color: rgba(230,150,208,.42); background: linear-gradient(145deg, rgba(92,35,83,.13), rgba(24,13,32,.1)); }
-    .method-row.reverse .visual-placeholder { border-color: rgba(224,186,135,.38); }
-    .visual-placeholder::before, .visual-placeholder::after { border-color: rgba(217,106,181,.23); }
-    .flow-step { border-color: rgba(208,89,169,.33); background: linear-gradient(135deg, rgba(169,46,135,.18), rgba(76,34,81,.13)); }
-    .flow-sep, .method-copy li::before { color: #dd7fbd; }
-    .method-copy li { border-bottom-color: rgba(219,100,185,.19); }
-    .audience { background: radial-gradient(ellipse 55% 64% at 100% 12%, rgba(164,38,127,.21), transparent 75%), #2a182d; }
-    .audience-list { display: grid; gap: 10px; }
-    .audience-list li { padding: 15px 18px 15px 25px; border: 1px solid rgba(217,104,181,.16); border-left: 2px solid #bd3c9b; border-radius: 5px 15px 15px 5px; background: linear-gradient(100deg, rgba(164,48,132,.16), rgba(55,28,60,.1) 65%); }
-    .audience-list li::before { top: 24px; left: 11px; width: 5px; height: 5px; border: 0; background: #e18ac4; box-shadow: 0 0 12px rgba(221,91,174,.58); }
-    .audience .media-placeholder { border-color: rgba(218,99,183,.46); background: radial-gradient(circle at 67% 26%, rgba(184,45,145,.29), transparent 60%), linear-gradient(145deg, #3a203e, #24162b); box-shadow: 0 24px 70px rgba(0,0,0,.17); }
-    .speaker { background: radial-gradient(ellipse 48% 67% at 19% 49%, rgba(171,39,129,.24), transparent 73%), linear-gradient(115deg, #211322, #160e1b 72%); }
-    .speaker-photo { border-color: rgba(219,119,190,.4); box-shadow: 0 30px 80px rgba(0,0,0,.32), 0 0 70px rgba(170,36,129,.16); }
-    .proof { background: #121116; }
-    .proof-card { border-color: rgba(194,95,165,.26); background: linear-gradient(145deg, #231b27, #1c1921); }
-    .proof-card:hover { border-color: rgba(228,115,190,.52); box-shadow: 0 20px 45px rgba(128,30,104,.13); }
-    .proof .video-placeholder { border-color: rgba(213,130,191,.34); background: radial-gradient(circle at 50% 43%, rgba(108,47,101,.26), #25212a 78%); }
-    .registration { color: #2c1d2b; background: #e8dde5; }
-    .registration::before, .registration::after { content: none; }
-    .registration-curve { position: absolute; left: 0; width: 100%; height: 86px; z-index: 0; pointer-events: none; }
-    .registration-curve-top { top: 0; }
-    .registration-curve-bottom { bottom: 0; }
-    .registration h2 { color: #2c1d2b; }
-    .registration .section-kicker { color: #85436e; }
-    .registration-copy p { color: #514251; }
-    .details-list li { border-color: rgba(112,57,101,.2); background: rgba(255,255,255,.48); }
-    .details-list li:nth-child(n+5) { border-bottom-color: rgba(112,57,101,.2); background: transparent; }
-    .form-box { border-color: rgba(210,111,177,.47); background: radial-gradient(circle at 95% 0%, rgba(178,48,141,.24), transparent 55%), linear-gradient(150deg, #452149, #29182f 78%); box-shadow: 0 28px 72px rgba(80,39,71,.22); }
-    .form-box h3 { color: #f9f2f7; }
-    .final-invite { isolation: isolate; background: radial-gradient(ellipse 55% 75% at 88% 50%, rgba(168,37,133,.22), transparent 76%), #1b1022; }
-    .final-invite::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 38% 55% at 87% 48%, rgba(196,39,150,.17), transparent 73%); animation: magenta-breathe 10s ease-in-out infinite alternate; }
-    .final-invite .media-placeholder { border-color: rgba(224,106,186,.44); background: radial-gradient(circle at 66% 29%, rgba(190,44,147,.25), transparent 59%), #2a1830; }
-    .footer { background: #0d0a10; }
-    @media (max-width: 600px) {
-      .hero-image::after { background: linear-gradient(180deg, transparent 10%, rgba(16,10,19,.05) 45%, #100a13 98%); }
-      .hero .title-pre { padding: 10px 14px; font-size: 12px; letter-spacing: .05em; }
-      .registration-curve { height: 46px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -471,11 +259,13 @@
           <p>Bạn có thể lấy chính những hoạt động diễn ra hằng ngày để làm nội dung, thay vì ngày nào cũng ngồi nghĩ một ý tưởng hoàn toàn mới.</p>
           <p>Từ nguồn nguyên liệu ấy, Khánh sẽ hướng dẫn bạn xây thói quen làm đều, tìm góc triển khai và tạo video có khả năng chuyển đổi.</p>
           </div>
-          <div class="machine-visual video-only">
-          <div class="shorts-intro" aria-label="Vị trí YouTube Short giới thiệu khóa học của Vũ Kim Khánh">
-            <div class="shorts-frame"><iframe id="course-intro-player" src="https://www.youtube.com/embed/PrUpOpeqU2w?rel=0&amp;modestbranding=1" title="Mở khóa chuyển đổi #1 - Vũ Kim Khánh" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <p class="video-fallback">Nếu trình duyệt không phát video, <a href="https://www.youtube.com/shorts/PrUpOpeqU2w" target="_blank" rel="noopener noreferrer">xem trực tiếp trên YouTube</a>.</p>
+          <div class="machine-visual">
+          <div class="machine-flow" aria-label="Vị trí so sánh ảnh nguyên liệu và video đầu ra">
+            <div class="media-slot"><span>ẢNH NGUYÊN LIỆU</span></div>
+            <span class="flow-arrow" aria-hidden="true"></span>
+            <div class="media-slot output"><span>VIDEO TỪ NGUYÊN LIỆU ĐÓ</span></div>
           </div>
+          <p class="media-caption">Tư liệu chị Quế và mô hình xử lý dữ liệu của Khánh sẽ được thêm tại đây.</p>
           </div>
         </div>
       </div>
@@ -492,7 +282,7 @@
             <p class="method-number">01 / THÓI QUEN</p>
             <h3>Xây thói quen làm video</h3>
             <p>Khánh không bắt đầu bằng áp lực mỗi ngày phải sản xuất thật nhiều video. Anh giúp bạn biến việc làm video thành một phần tự nhiên trong công việc kinh doanh.</p>
-            <p class="method-flow"><span class="flow-step">Hiểu đúng</span><span class="flow-sep">→</span><span class="flow-step">Bài học nhỏ</span><span class="flow-sep">→</span><span class="flow-step">Thử thách nhỏ</span><span class="flow-sep">→</span><span class="flow-step">Duy trì nhịp độ</span><span class="flow-sep">→</span><span class="flow-step">Môi trường cùng thực hành.</span></p>
+            <p class="method-flow">Hiểu đúng → Bài học nhỏ → Thử thách nhỏ → Duy trì nhịp độ → Môi trường cùng thực hành.</p>
             <p>Từ những bài tập và thử thách nhỏ, bạn từng bước hình thành thói quen. Bạn bè, cộng sự hoặc những người cùng làm video có thể thực hành, chia sẻ và động viên nhau. Mục tiêu là biến việc làm video từ một nhiệm vụ phải làm thành một thói quen và niềm vui trong đời sống kinh doanh.</p>
           </div>
           <div class="method-visual" aria-label="Vị trí ảnh hệ thống thói quen"><div class="visual-placeholder"><span>[ẢNH HỆ THỐNG 1 - Bài học nhỏ, thử thách nhỏ, nhịp thực hành và môi trường cùng làm video]</span></div></div>
@@ -502,7 +292,7 @@
             <p class="method-number">02 / PHƯƠNG PHÁP</p>
             <h3>Phương pháp biến tình huống thành video chuyển đổi</h3>
             <p>Bạn không cần ngày nào cũng ngồi nghĩ content từ đầu. Khánh sẽ hướng dẫn cách lấy một tình huống thực tế, chọn góc nhìn phù hợp rồi phát triển thành video.</p>
-            <p class="method-flow"><span class="flow-step">Tình huống thực tế</span><span class="flow-sep">→</span><span class="flow-step">Góc nhìn</span><span class="flow-sep">→</span><span class="flow-step">Ý tưởng</span><span class="flow-sep">→</span><span class="flow-step">Kịch bản</span><span class="flow-sep">→</span><span class="flow-step">Video</span><span class="flow-sep">→</span><span class="flow-step">Chuyển đổi.</span></p>
+            <p class="method-flow">Tình huống thực tế → Góc nhìn → Ý tưởng → Kịch bản → Video → Chuyển đổi.</p>
             <p>Phương pháp giúp bạn biết mình làm video cho ai, nói điều gì và dùng bằng chứng nào để giải quyết băn khoăn của khách. Khi đã làm được đều, bạn có thể nâng dần sang video khiến khách nhớ bạn là ai và bạn giỏi điều gì.</p>
           </div>
           <div class="method-visual" aria-label="Vị trí ảnh mô hình xử lý dữ liệu"><div class="visual-placeholder"><span>Ảnh mô hình xử lý dữ liệu của anh Khánh</span></div></div>
@@ -557,51 +347,20 @@
         </div>
       </div>
     </section>
-    <section class="section events" id="su-kien" data-section="Hình ảnh sự kiện và giảng dạy">
-      <div class="shell">
-        <span class="section-kicker">06 / SỰ KIỆN & GIẢNG DẠY</span>
-        <div class="events-head">
-          <h2>Khánh tại các chương trình và sự kiện</h2>
-          <p class="events-intro">Những khoảnh khắc Khánh đứng lớp, chia sẻ tại sự kiện hoặc đồng hành đào tạo cùng các tổ chức và tập đoàn.</p>
-        </div>
-        <div class="events-toolbar" aria-label="Điều hướng thư viện ảnh sự kiện">
-          <button class="events-button" type="button" data-event-scroll="prev" aria-label="Xem ảnh trước">←</button>
-          <button class="events-button" type="button" data-event-scroll="next" aria-label="Xem ảnh tiếp theo">→</button>
-        </div>
-        <div class="events-track" tabindex="0" aria-label="Thư viện 8 hình ảnh sự kiện">
-          <article class="event-card"><div class="event-image-placeholder" data-index="01"><span>[ẢNH SỰ KIỆN 16:9 - 01]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="02"><span>[ẢNH SỰ KIỆN 16:9 - 02]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="03"><span>[ẢNH SỰ KIỆN 16:9 - 03]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="04"><span>[ẢNH SỰ KIỆN 16:9 - 04]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="05"><span>[ẢNH SỰ KIỆN 16:9 - 05]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="06"><span>[ẢNH SỰ KIỆN 16:9 - 06]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="07"><span>[ẢNH SỰ KIỆN 16:9 - 07]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="08"><span>[ẢNH SỰ KIỆN 16:9 - 08]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-        </div>
-      </div>
-    </section>
     <section class="section proof" data-section="Tư liệu học viên">
       <div class="shell">
-        <span class="section-kicker">07 / TƯ LIỆU HỌC VIÊN</span>
+        <span class="section-kicker">06 / TƯ LIỆU HỌC VIÊN</span>
         <h2>Xem học viên của Khánh đã làm nội dung như thế nào</h2>
         <div class="proof-grid">
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="01"><span>[ẢNH DỌC HỌC VIÊN 01]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="02"><span>[ẢNH DỌC HỌC VIÊN 02]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="03"><span>[ẢNH DỌC HỌC VIÊN 03]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="04"><span>[ẢNH DỌC HỌC VIÊN 04]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="05"><span>[ẢNH DỌC HỌC VIÊN 05]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="06"><span>[ẢNH DỌC HỌC VIÊN 06]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="07"><span>[ẢNH DỌC HỌC VIÊN 07]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="08"><span>[ẢNH DỌC HỌC VIÊN 08]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
+          <div class="proof-card"><div class="video-placeholder"><span>[VIDEO HỌC VIÊN 1 - Vũ Hải xe điện]</span></div><p>Tư liệu từ chương trình khác của Khánh</p></div>
+          <div class="proof-card"><div class="video-placeholder"><span>[VIDEO HỌC VIÊN 2 - Một học viên khác ngành hoặc case video 100 views ra đơn đầu tiên, nếu có tư liệu xác minh]</span></div><p>Tư liệu từ chương trình khác của Khánh</p></div>
         </div>
         <a class="cta" href="#dang-ky">Đăng ký tham gia miễn phí</a>
       </div>
     </section>
     <section class="section registration" id="dang-ky" data-section="Thông tin và đăng ký">
-      <svg class="registration-curve registration-curve-top" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 0H1440V26C980 102 520 -20 0 62Z" fill="#121116"/></svg>
-      <svg class="registration-curve registration-curve-bottom" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 62C420 40 900 72 1440 46V96H0Z" fill="#1b1022"/></svg>
       <div class="shell">
-        <span class="section-kicker">08 / THÔNG TIN & ĐĂNG KÝ</span>
+        <span class="section-kicker">07 / THÔNG TIN & ĐĂNG KÝ</span>
         <div class="registration-grid">
           <div class="registration-copy">
             <h2>Đăng ký tham gia Mở Khóa Chuyển Đổi</h2>
@@ -628,7 +387,7 @@
     </section>
     <section class="section final-invite" data-section="Lời mời cuối">
       <div class="shell">
-        <span class="section-kicker">09 / LỜI MỜI CUỐI</span>
+        <span class="section-kicker">08 / LỜI MỜI CUỐI</span>
         <div class="split">
           <div class="split-copy">
             <h2>Bắt đầu làm video từ chính công việc bạn đang có</h2>
@@ -656,23 +415,11 @@
         <p>[LINK ĐIỀU KHOẢN THAM GIA, NẾU CÓ]</p>
       </div>
     </div>
-    <div class="shell footer-disclaimer">
-      <p>Lưu ý: Tôi không có bất kỳ khóa học hay chương trình đào tạo nào về làm giàu nhanh, và tôi tin rằng KHÔNG THỂ có bất cứ khóa đào tạo nào giúp bạn làm giàu nhanh. Các chương trình của tôi tập trung đào tạo và hỗ trợ về chiến lược, kỹ năng cụ thể, chia sẻ kiến thức và kinh nghiệm thực tế để giúp bạn có kết quả tốt nhất có thể. Tôi không đưa ra bất cứ đảm bảo nào về khả năng đạt được kết quả hoặc kiếm được tiền — kết quả phụ thuộc hoàn toàn vào hành động của bạn trong và sau chương trình. Tất cả các khóa học không hoàn học phí, mà chỉ hỗ trợ chuyển qua khóa học khác, bảo lưu, hoặc chuyển cho người khác theo yêu cầu của học viên.</p>
-      <p class="disclaimer-note">Chương trình không cam kết người tham gia sẽ tạo ra thu nhập trong 4 ngày. Kết quả phụ thuộc vào chuyên môn, thị trường, mức độ thực hành và khả năng triển khai của mỗi người.</p>
-    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script defer>
     (() => {
-      const eventsTrack = document.querySelector('.events-track');
-      document.querySelectorAll('[data-event-scroll]').forEach((button) => {
-        button.addEventListener('click', () => {
-          if (!eventsTrack) return;
-          const direction = button.dataset.eventScroll === 'next' ? 1 : -1;
-          eventsTrack.scrollBy({ left: direction * eventsTrack.clientWidth * .82, behavior: 'smooth' });
-        });
-      });
       window.addEventListener('load', () => {
         if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         gsap.registerPlugin(ScrollTrigger);
@@ -685,7 +432,6 @@
         });
         gsap.from('.audience-list li', { opacity: 0, y: 12, duration: .42, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.audience-list', start: 'top 82%', once: true } });
         gsap.from('.speaker-photo', { opacity: 0, y: 25, duration: .8, ease: 'power2.out', scrollTrigger: { trigger: '.speaker-photo', start: 'top 82%', once: true } });
-        gsap.from('.event-card', { opacity: 0, x: 22, duration: .6, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.events-track', start: 'top 85%', once: true } });
         gsap.from('.proof-card', { opacity: 0, y: 20, duration: .65, stagger: .14, ease: 'power2.out', scrollTrigger: { trigger: '.proof-grid', start: 'top 84%', once: true } });
         gsap.from('.form-box', { opacity: 0, y: 22, duration: .78, ease: 'power2.out', scrollTrigger: { trigger: '.form-box', start: 'top 83%', once: true } });
       });
@@ -693,4 +439,3 @@
   </script>
 </body>
 </html>
-
