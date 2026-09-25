@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
   <style>
     :root {
       color-scheme: dark;
@@ -63,12 +64,12 @@
     h3 { font-size: clamp(20px, 1.75vw, 24px); line-height: 1.4; font-weight: 600; letter-spacing: -.025em; }
     .pain { border-top: 1px solid rgba(149,105,153,.14); border-bottom: 1px solid rgba(149,105,153,.14); background: #140d19; }
     .pain h2 { max-width: 1060px; margin-bottom: 44px; }
-    .pain-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
-    .pain-item { position: relative; min-height: 286px; padding: 30px 28px; border: 1px solid rgba(155,111,162,.2); border-radius: 20px; background: #24162a; transition: background .25s ease, border-color .25s ease, transform .25s ease; }
-    .pain-item:hover { transform: translateY(-4px); border-color: rgba(174,126,182,.42); background: #2d1a34; }
+    .pain-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
+    .pain-item { position: relative; display: grid; grid-template-rows: auto minmax(2.8em, auto) 1fr; min-height: 286px; height: 100%; padding: 30px 28px; border: 1px solid rgba(155,111,162,.2); border-radius: 20px; background: #24162a; transition: background .25s ease, border-color .25s ease; }
+    .pain-item:hover { transform: none; border-color: rgba(174,126,182,.42); background: #2d1a34; }
     .pain-item::after { content: ""; position: absolute; inset: auto 28px 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(161,107,169,.43), transparent); }
     .pain-number { display: block; margin-bottom: 32px; color: #ad8db6; font-size: 12px; font-weight: 900; letter-spacing: .12em; }
-    .pain-item h3 { margin-bottom: 12px; color: #f7edf6; }
+    .pain-item h3 { min-height: 2.8em; margin-bottom: 12px; color: #f7edf6; }
     .pain-item p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.67; }
     .machine { background: radial-gradient(ellipse 60% 63% at 17% 53%, rgba(111,50,111,.27), transparent 77%), linear-gradient(135deg, #27132f 0%, #1a0e23 48%, #120a18 100%); }
     .machine .section-kicker { color: var(--gold-light); }
@@ -90,8 +91,10 @@
     .shorts-intro { display: grid; justify-items: center; gap: 15px; }
     .machine-visual.video-only { padding: 0; border: 0; background: transparent; box-shadow: none; transform: none; }
     .machine-visual.video-only::before { content: none; }
-    .shorts-frame { position: relative; width: min(100%, 315px); aspect-ratio: 9 / 16; overflow: hidden; border: 0; border-radius: 0; background: #000; box-shadow: none; }
-    .shorts-frame::before { content: none; }
+    .phone-frame { position: relative; width: min(88vw, 333px); padding: 8px; border-radius: 44px; background: linear-gradient(145deg, #d7b276 0%, #594553 12%, #09070b 34%, #171018 74%, #a45f8b 100%); box-shadow: 0 30px 70px rgba(4,0,7,.56), 0 0 42px rgba(184,57,145,.18), inset 0 0 0 1px rgba(255,236,205,.24); isolation: isolate; }
+    .phone-frame::before { content: ""; position: absolute; z-index: 3; top: 16px; left: 50%; width: 86px; height: 23px; border: 1px solid rgba(255,255,255,.06); border-radius: 999px; background: #030304; box-shadow: 0 2px 7px rgba(0,0,0,.5); transform: translateX(-50%); pointer-events: none; }
+    .phone-frame::after { content: ""; position: absolute; top: 108px; left: -3px; width: 3px; height: 58px; border-radius: 3px 0 0 3px; background: linear-gradient(180deg, #b28b68, #3b2e39); box-shadow: 0 76px 0 #493642; pointer-events: none; }
+    .shorts-frame { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid rgba(255,255,255,.08); border-radius: 36px; background: #000; box-shadow: inset 0 0 0 1px rgba(0,0,0,.75); }
     .shorts-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .video-fallback { margin: 10px 0 0 !important; color: #bfaec2 !important; font-size: 11px !important; line-height: 1.5 !important; text-align: center; }
     .video-fallback a { color: #ead09c; text-underline-offset: 3px; }
@@ -121,6 +124,9 @@
     .visual-placeholder::after { transform: translate(54px,42px); }
     .visual-placeholder span { position: relative; z-index: 1; max-width: 330px; color: #f1e5f1; font-size: 15px; font-weight: 700; line-height: 1.6; }
     .method-row:last-child .visual-placeholder { border-color: rgba(235,196,139,.34); }
+    .method-visual--photo { min-height: 0; padding: 14px; }
+    .method-photo { position: relative; z-index: 1; width: 100%; margin: 0; overflow: hidden; border: 1px solid rgba(244,210,235,.2); border-radius: 18px; background: #1b1023; box-shadow: 0 22px 54px rgba(5,2,8,.36); }
+    .method-photo img { display: block; width: 100%; height: auto; }
     .audience { background: #140d19; }
     .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .94fr); gap: clamp(45px, 7vw, 105px); align-items: center; }
     .split-copy h2 { margin-bottom: 20px; }
@@ -131,6 +137,9 @@
     .media-placeholder { position: relative; display: grid; place-items: center; min-height: 390px; padding: 32px; border: 1px dashed rgba(213,165,219,.45); border-radius: 25px; background: radial-gradient(circle at 50% 35%, rgba(101,47,107,.38), transparent 58%), #24162b; color: #ebdfed; text-align: center; }
     .media-placeholder span { max-width: 330px; font-size: 15px; font-weight: 700; line-height: 1.6; }
     .media-placeholder small { display: block; margin-top: 12px; color: #bda6c2; font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+    .section-photo { position: relative; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; border: 1px solid rgba(218,99,183,.4); border-radius: 25px; background: #24162b; box-shadow: 0 24px 70px rgba(0,0,0,.2); }
+    .section-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(145deg, rgba(190,44,147,.08), transparent 45%, rgba(21,10,26,.16)); }
+    .section-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .speaker { background: radial-gradient(ellipse 58% 75% at 18% 50%, rgba(111,48,110,.28), transparent 73%), linear-gradient(135deg, #26132e, #170d1e); }
     .speaker .section-kicker { color: var(--gold-light); }
     .speaker-photo { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid rgba(210,169,213,.35); border-radius: 26px; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
@@ -141,28 +150,33 @@
     .events h2 { max-width: 790px; margin: 0; }
     .events-intro { margin: 0; color: #d1c2d3; font-size: 15px; line-height: 1.7; }
     .events-toolbar { display: flex; justify-content: flex-end; gap: 9px; margin: 0 0 15px; }
-    .events-button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(226,143,204,.34); border-radius: 50%; color: #f4ddea; background: rgba(94,35,82,.32); font: inherit; font-size: 19px; cursor: pointer; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
-    .events-button:hover { transform: translateY(-2px); border-color: rgba(235,174,215,.65); background: rgba(160,43,127,.3); }
-    .events-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 31.5%); gap: 18px; padding: 5px 1px 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .events-button { display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(226,143,204,.34); border-radius: 50%; color: #f4ddea; background: rgba(94,35,82,.32); cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+    .events-button svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .events-button:hover { border-color: rgba(235,174,215,.65); background: rgba(160,43,127,.3); }
+    .events-slider { overflow: hidden; }
+    .events-track { display: flex; gap: 0; padding: 5px 1px 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
     .events-track::-webkit-scrollbar { display: none; }
-    .event-card { min-width: 0; scroll-snap-align: start; }
-    .event-image-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; padding: 22px; overflow: hidden; border: 1px dashed rgba(226,128,197,.47); border-radius: 18px; background: radial-gradient(circle at 68% 23%, rgba(202,44,154,.3), transparent 56%), linear-gradient(145deg, #492045, #26172b 76%); box-shadow: 0 20px 45px rgba(0,0,0,.16); text-align: center; }
-    .event-image-placeholder::after { content: attr(data-index); position: absolute; top: 13px; right: 14px; color: rgba(248,225,242,.58); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
-    .event-image-placeholder span { color: #f5e7f1; font-size: 13px; font-weight: 800; line-height: 1.55; }
+    .event-card { flex: 0 0 calc(50% - 10px); width: calc(50% - 10px); min-width: 0; scroll-snap-align: start; }
+    .event-image { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(226,128,197,.28); border-radius: 18px; background: #26172b; box-shadow: 0 20px 45px rgba(0,0,0,.2); }
+    .event-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+    .event-card:hover .event-image img { transform: scale(1.025); }
     .event-card p { margin: 13px 4px 0; color: #baa8bd; font-size: 12px; line-height: 1.55; }
     .event-card p strong, .event-card p span { display: block; }
     .event-card p strong { margin-bottom: 4px; color: #f2e6ef; font-size: 13px; }
     .proof { background: #100b15; }
     .proof h2 { max-width: 900px; margin-bottom: 36px; }
-    .proof-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; margin-bottom: 31px; }
-    .proof-card { min-width: 0; padding: 10px; border: 1px solid rgba(157,111,165,.25); border-radius: 20px; background: #211429; transition: transform .25s ease, border-color .25s ease; }
-    .proof-card:hover { transform: translateY(-4px); border-color: rgba(198,151,204,.45); }
-    .student-photo-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 9 / 16; padding: 18px; overflow: hidden; border: 1px dashed rgba(206,160,211,.4); border-radius: 13px; background: radial-gradient(circle at 50% 32%, rgba(164,54,134,.31), transparent 58%), linear-gradient(160deg, #362039, #201624); text-align: center; }
-    .student-photo-placeholder::after { content: attr(data-index); position: absolute; top: 13px; right: 13px; color: rgba(248,225,242,.52); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
-    .student-photo-placeholder span { color: #f2e4f1; font-size: 13px; font-weight: 700; line-height: 1.55; }
-    .proof-card p { margin: 14px 6px 6px; color: #bdaac1; font-size: 12px; line-height: 1.55; }
+    .proof-slider { margin-bottom: 27px; padding-bottom: 4px; overflow: hidden; }
+    .proof-grid { display: flex; align-items: stretch; gap: 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .proof-grid::-webkit-scrollbar { display: none; }
+    .proof-card { display: flex; flex: 0 0 calc((100% - 40px) / 3); flex-direction: column; width: calc((100% - 40px) / 3); min-width: 0; height: auto; padding: 10px; border: 1px solid rgba(157,111,165,.25); border-radius: 20px; background: #211429; scroll-snap-align: start; transition: transform .25s ease, border-color .25s ease; }
+    .proof-card:hover { transform: none; border-color: rgba(198,151,204,.45); }
+    .student-channel-image { position: relative; aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid rgba(206,160,211,.26); border-radius: 13px; background: #fff; }
+    .student-channel-image img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: top center; transition: transform .35s ease; }
+    .proof-card:hover .student-channel-image img { transform: scale(1.012); }
+    .event-image img, .student-channel-image img { -webkit-user-drag: none; user-select: none; }
+    .proof-card p { display: grid; grid-template-rows: 20px 38px; gap: 5px; margin: 14px 6px 6px; color: #bdaac1; font-size: 12px; line-height: 1.55; }
     .proof-card p strong, .proof-card p span { display: block; }
-    .proof-card p strong { margin-bottom: 5px; color: #f2e7f0; font-size: 13px; }
+    .proof-card p strong { margin-bottom: 0; color: #f2e7f0; font-size: 13px; }
     .registration { background: radial-gradient(ellipse 50% 75% at 86% 42%, rgba(136,71,137,.24), transparent 78%), linear-gradient(135deg, #23122b, #160d1e 72%); }
     .registration .section-kicker { color: var(--gold-light); }
     .registration-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(45px, 7vw, 100px); align-items: start; }
@@ -199,14 +213,17 @@
       .speaker .split-copy { order: -1; }
       .method-row { padding: 62px 0; }
       .method-visual { min-height: 340px; }
+      .method-visual--photo { min-height: 0; }
       .visual-placeholder { min-height: 280px; }
       .pain-list { grid-template-columns: 1fr; }
       .pain-item { min-height: 0; }
+      .pain-item h3 { min-height: 0; }
       .hero-image { height: 590px; }
       .hero-content { padding-top: 430px; }
       .events-head { grid-template-columns: 1fr; gap: 15px; }
       .events-toolbar { justify-content: flex-start; }
-      .events-track { grid-auto-columns: minmax(300px, 48%); }
+      .event-card { flex-basis: 76%; width: 76%; }
+      .proof-card { flex-basis: calc(50% - 9px); width: calc(50% - 9px); }
     }
     @media (max-width: 600px) {
       .shell { width: min(100% - 34px, 1180px); }
@@ -239,10 +256,11 @@
       .method-row { gap: 28px; padding: 50px 0; }
       .method-copy h3 { font-size: 27px; }
       .method-visual { min-height: 270px; padding: 14px; }
+      .method-visual--photo { min-height: 0; padding: 8px; }
       .visual-placeholder { min-height: 240px; padding: 20px; }
       .visual-placeholder span { font-size: 13px; }
       .media-placeholder { min-height: 270px; padding: 22px; }
-      .proof-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .section-photo { border-radius: 18px; }
       .footer-grid { grid-template-columns: 1fr; }
       .video-placeholder { min-height: 210px; }
       .registration-grid { gap: 36px; }
@@ -251,12 +269,19 @@
       .footer-links { text-align: left; }
       .footer-disclaimer { margin-top: 30px; padding-top: 25px; }
       .footer-disclaimer p { font-size: 11px; line-height: 1.7; }
-      .proof-grid { display: flex; gap: 14px; margin-right: -17px; padding-right: 17px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-      .proof-grid::-webkit-scrollbar { display: none; }
-      .proof-card { flex: 0 0 min(76vw, 286px); scroll-snap-align: start; }
+      .proof-slider, .events-slider { margin-right: -17px; padding-right: 17px; }
+      .proof-card { flex-basis: min(76vw, 286px); width: min(76vw, 286px); }
       .events-head { margin-bottom: 25px; }
       .events-toolbar { display: none; }
-      .events-track { grid-auto-columns: min(84vw, 320px); margin-right: -17px; padding-right: 17px; }
+      .event-card { flex-basis: min(90vw, 360px); width: min(90vw, 360px); }
+    }
+    .swiper-initialized .events-track, .swiper-initialized .proof-grid { overflow: visible; scroll-snap-type: none; }
+    .gallery-pagination { position: relative !important; inset: auto !important; display: none; width: 100% !important; min-height: 22px; margin: 16px 0 24px; align-items: center; justify-content: center; transform: none !important; }
+    .gallery-pagination .swiper-pagination-bullet { width: 7px; height: 7px; background: #b995b9; opacity: .35; transition: width .25s ease, opacity .25s ease, background .25s ease; }
+    .gallery-pagination .swiper-pagination-bullet-active { width: 22px; border-radius: 999px; background: #dfb66f; opacity: 1; }
+    @media (max-width: 600px) {
+      .proof-slider { margin-bottom: 0; }
+      .gallery-pagination { display: flex; }
     }
     /* Phương án B: nhịp sáng tối và các khối thông tin có cấu trúc. */
     .pain { background: radial-gradient(ellipse 66% 90% at 8% 5%, rgba(107,52,109,.27), transparent 75%), #1b1021; }
@@ -473,8 +498,8 @@
           </div>
           <div class="machine-visual video-only">
           <div class="shorts-intro" aria-label="Vị trí YouTube Short giới thiệu khóa học của Vũ Kim Khánh">
-            <div class="shorts-frame"><iframe id="course-intro-player" src="https://www.youtube.com/embed/PrUpOpeqU2w?rel=0&amp;modestbranding=1" title="Mở khóa chuyển đổi #1 - Vũ Kim Khánh" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <p class="video-fallback">Nếu trình duyệt không phát video, <a href="https://www.youtube.com/shorts/PrUpOpeqU2w" target="_blank" rel="noopener noreferrer">xem trực tiếp trên YouTube</a>.</p>
+            <div class="phone-frame"><div class="shorts-frame"><iframe id="course-intro-player" src="https://www.youtube.com/embed/AaAh_EBM-Es?rel=0&amp;modestbranding=1" title="Mở khóa chuyển đổi #1 - Vũ Kim Khánh" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+            <p class="video-fallback">Nếu trình duyệt không phát video, <a href="https://www.youtube.com/shorts/AaAh_EBM-Es" target="_blank" rel="noopener noreferrer">xem trực tiếp trên YouTube</a>.</p>
           </div>
           </div>
         </div>
@@ -495,7 +520,9 @@
             <p class="method-flow"><span class="flow-step">Hiểu đúng</span><span class="flow-sep">→</span><span class="flow-step">Bài học nhỏ</span><span class="flow-sep">→</span><span class="flow-step">Thử thách nhỏ</span><span class="flow-sep">→</span><span class="flow-step">Duy trì nhịp độ</span><span class="flow-sep">→</span><span class="flow-step">Môi trường cùng thực hành.</span></p>
             <p>Từ những bài tập và thử thách nhỏ, bạn từng bước hình thành thói quen. Bạn bè, cộng sự hoặc những người cùng làm video có thể thực hành, chia sẻ và động viên nhau. Mục tiêu là biến việc làm video từ một nhiệm vụ phải làm thành một thói quen và niềm vui trong đời sống kinh doanh.</p>
           </div>
-          <div class="method-visual" aria-label="Vị trí ảnh hệ thống thói quen"><div class="visual-placeholder"><span>[ẢNH HỆ THỐNG 1 - Bài học nhỏ, thử thách nhỏ, nhịp thực hành và môi trường cùng làm video]</span></div></div>
+          <div class="method-visual method-visual--photo">
+            <figure class="method-photo"><img src="assets/illustrations/habit-video-phone-pov-v4-warm-skin.webp" alt="Bàn tay cầm điện thoại quay lại công việc kinh doanh hằng ngày" loading="lazy" decoding="async"></figure>
+          </div>
         </div>
         <div class="method-row reverse" data-section="Video chuyển đổi">
           <div class="method-copy">
@@ -505,7 +532,9 @@
             <p class="method-flow"><span class="flow-step">Tình huống thực tế</span><span class="flow-sep">→</span><span class="flow-step">Góc nhìn</span><span class="flow-sep">→</span><span class="flow-step">Ý tưởng</span><span class="flow-sep">→</span><span class="flow-step">Kịch bản</span><span class="flow-sep">→</span><span class="flow-step">Video</span><span class="flow-sep">→</span><span class="flow-step">Chuyển đổi.</span></p>
             <p>Phương pháp giúp bạn biết mình làm video cho ai, nói điều gì và dùng bằng chứng nào để giải quyết băn khoăn của khách. Khi đã làm được đều, bạn có thể nâng dần sang video khiến khách nhớ bạn là ai và bạn giỏi điều gì.</p>
           </div>
-          <div class="method-visual" aria-label="Vị trí ảnh mô hình xử lý dữ liệu"><div class="visual-placeholder"><span>Ảnh mô hình xử lý dữ liệu của anh Khánh</span></div></div>
+          <div class="method-visual method-visual--photo">
+            <figure class="method-photo"><img src="assets/illustrations/video-formula-price-objection-v1.webp" alt="Sổ tay mind map biến câu hỏi giá cao của khách thành nhiều ý tưởng video" loading="lazy" decoding="async"></figure>
+          </div>
         </div>
         <div class="method-row" data-section="Ứng dụng AI">
           <div class="method-copy">
@@ -521,7 +550,9 @@
             </ul>
             <p><strong>Bạn không cần để AI làm content thay mình. Bạn dùng AI để biến kinh nghiệm, câu chuyện và góc nhìn của chính mình thành content nhanh hơn.</strong></p>
           </div>
-          <div class="method-visual" aria-label="Vị trí ảnh hệ thống Content AI"><div class="visual-placeholder"><span>[ẢNH HỆ THỐNG 3 - Giao diện hoặc luồng Content AI thật: tìm ý → kịch bản → hỗ trợ hoàn thiện video]</span></div></div>
+          <div class="method-visual method-visual--photo">
+            <figure class="method-photo"><img src="assets/illustrations/content-ai-agent-features-v1.webp" alt="Content AI Agent hỗ trợ tìm ý tưởng, viết bài, nghiên cứu và chỉnh sửa bằng AI" loading="lazy" decoding="async"></figure>
+          </div>
         </div>
       </div>
     </section>
@@ -540,7 +571,7 @@
             </ul>
             <p>Bạn không cần trở thành một TikToker hay có đội ngũ content chuyên nghiệp mới có thể bắt đầu.</p>
           </div>
-          <div class="media-placeholder" aria-label="Vị trí tư liệu Khánh làm việc cùng học viên"><span>[ẢNH HOẶC VIDEO - Khánh làm việc cùng một người kinh doanh/học viên trong quá trình xây video]<small>Placeholder tư liệu thật</small></span></div>
+          <figure class="section-photo section-photo--audience"><img src="assets/gallery/sections/audience-coaching.webp" alt="Vũ Kim Khánh trực tiếp hướng dẫn học viên xem và hoàn thiện nội dung trên điện thoại" loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </section>
@@ -565,35 +596,39 @@
           <p class="events-intro">Những khoảnh khắc Khánh đứng lớp, chia sẻ tại sự kiện hoặc đồng hành đào tạo cùng các tổ chức và tập đoàn.</p>
         </div>
         <div class="events-toolbar" aria-label="Điều hướng thư viện ảnh sự kiện">
-          <button class="events-button" type="button" data-event-scroll="prev" aria-label="Xem ảnh trước">←</button>
-          <button class="events-button" type="button" data-event-scroll="next" aria-label="Xem ảnh tiếp theo">→</button>
+          <button class="events-button" type="button" data-event-scroll="prev" aria-label="Xem ảnh trước"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="events-button" type="button" data-event-scroll="next" aria-label="Xem ảnh tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
-        <div class="events-track" tabindex="0" aria-label="Thư viện 8 hình ảnh sự kiện">
-          <article class="event-card"><div class="event-image-placeholder" data-index="01"><span>[ẢNH SỰ KIỆN 16:9 - 01]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="02"><span>[ẢNH SỰ KIỆN 16:9 - 02]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="03"><span>[ẢNH SỰ KIỆN 16:9 - 03]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="04"><span>[ẢNH SỰ KIỆN 16:9 - 04]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="05"><span>[ẢNH SỰ KIỆN 16:9 - 05]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="06"><span>[ẢNH SỰ KIỆN 16:9 - 06]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="07"><span>[ẢNH SỰ KIỆN 16:9 - 07]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
-          <article class="event-card"><div class="event-image-placeholder" data-index="08"><span>[ẢNH SỰ KIỆN 16:9 - 08]</span></div><p><strong>[Tên sự kiện hoặc tập đoàn]</strong><span>[Vai trò và mô tả ngắn về hình ảnh]</span></p></article>
+        <div class="events-slider swiper" aria-label="Thư viện 8 hình ảnh sự kiện">
+          <div class="events-track swiper-wrapper">
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-stage-audience.webp" alt="Vũ Kim Khánh chia sẻ trên sân khấu trước đông đảo người tham dự" loading="lazy"></div><p><strong>Hội nghị bán hàng quy mô lớn</strong><span>Chia sẻ trực tiếp trước đông đảo người tham dự.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-stage-speaker.webp" alt="Vũ Kim Khánh đang thuyết trình trên sân khấu" loading="lazy"></div><p><strong>Diễn giả Vũ Kim Khánh</strong><span>Khoảnh khắc chia sẻ trong một chương trình đào tạo.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-conference-walk.webp" alt="Vũ Kim Khánh giao lưu giữa khu vực khán giả tại hội nghị" loading="lazy"></div><p><strong>Giao lưu cùng người tham dự</strong><span>Kết nối trực tiếp trong không gian hội nghị.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-social-content.webp" alt="Vũ Kim Khánh đào tạo nội dung và hành vi người dùng trên sân khấu" loading="lazy"></div><p><strong>Đào tạo về hành vi người dùng</strong><span>Phân tích nội dung và chuyển đổi trên mạng xã hội.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-vnpt-training.webp" alt="Vũ Kim Khánh đứng lớp trong chương trình đào tạo tại VNPT" loading="lazy"></div><p><strong>Đào tạo tại VNPT</strong><span>Chương trình kỹ năng bán hàng và livestream.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-workshop-presentation.webp" alt="Vũ Kim Khánh hướng dẫn học viên trong lớp thực hành" loading="lazy"></div><p><strong>Workshop thực hành livestream</strong><span>Hướng dẫn học viên triển khai nội dung thực tế.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-workshop-coaching.webp" alt="Vũ Kim Khánh coaching nhóm học viên tại bàn thực hành" loading="lazy"></div><p><strong>Đồng hành cùng học viên</strong><span>Coaching trực tiếp trong bài tập nhóm.</span></p></article>
+          <article class="event-card swiper-slide"><div class="event-image"><img src="assets/gallery/events/event-workshop-group.webp" alt="Vũ Kim Khánh chụp ảnh tập thể cùng học viên sau chương trình" loading="lazy"></div><p><strong>Tập thể chương trình đào tạo</strong><span>Khoảnh khắc tổng kết cùng các học viên.</span></p></article>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section proof" data-section="Tư liệu học viên">
+    <section class="section proof" data-section="Kênh khách hàng">
       <div class="shell">
-        <span class="section-kicker">07 / TƯ LIỆU HỌC VIÊN</span>
-        <h2>Xem học viên của Khánh đã làm nội dung như thế nào</h2>
-        <div class="proof-grid">
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="01"><span>[ẢNH DỌC HỌC VIÊN 01]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="02"><span>[ẢNH DỌC HỌC VIÊN 02]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="03"><span>[ẢNH DỌC HỌC VIÊN 03]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="04"><span>[ẢNH DỌC HỌC VIÊN 04]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="05"><span>[ẢNH DỌC HỌC VIÊN 05]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="06"><span>[ẢNH DỌC HỌC VIÊN 06]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="07"><span>[ẢNH DỌC HỌC VIÊN 07]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
-          <div class="proof-card"><div class="student-photo-placeholder" data-index="08"><span>[ẢNH DỌC HỌC VIÊN 08]</span></div><p><strong>[Tên học viên · Lĩnh vực]</strong><span>[Caption mô tả bức ảnh hoặc kết quả nổi bật]</span></p></div>
+        <span class="section-kicker">07 / KÊNH KHÁCH HÀNG</span>
+        <h2>Những kênh khách hàng đã triển khai nội dung như thế nào</h2>
+        <div class="proof-slider swiper" aria-label="Thư viện 7 kênh khách hàng">
+          <div class="proof-grid swiper-wrapper">
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-cap-doi-hoan-canh.webp" alt="Ảnh kênh Cặp đôi hoàn cảnh" loading="lazy"></div><p><strong>Cặp đôi hoàn cảnh</strong><span>Kênh nội dung đời sống và gia đình.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-do-bau-pham-huong.webp" alt="Ảnh kênh Đồ bầu Phạm Hương" loading="lazy"></div><p><strong>Đồ bầu Phạm Hương</strong><span>Kênh nội dung sản phẩm và bán hàng.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-minh-vuong-thuan-moc.webp" alt="Ảnh kênh Minh Vượng Thuần Mộc" loading="lazy"></div><p><strong>Minh Vượng Thuần Mộc</strong><span>Kênh chia sẻ sản phẩm và câu chuyện thương hiệu.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-nguyen-thi-ha.webp" alt="Ảnh kênh Nguyễn Thị Hà" loading="lazy"></div><p><strong>Nguyễn Thị Hà</strong><span>Kênh cá nhân triển khai nội dung video ngắn.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-nhung-truong-daily.webp" alt="Ảnh kênh Nhung Trương Daily" loading="lazy"></div><p><strong>Nhung Trương Daily</strong><span>Kênh nội dung đời sống và trải nghiệm hằng ngày.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-phu-nu-hanh-phuc.webp" alt="Ảnh kênh Phụ nữ hạnh phúc" loading="lazy"></div><p><strong>Phụ nữ hạnh phúc</strong><span>Kênh nội dung dành cho phụ nữ và gia đình.</span></p></div>
+          <div class="proof-card swiper-slide"><div class="student-channel-image"><img src="assets/gallery/channels/channel-trang-tam-an.webp" alt="Ảnh kênh Trang Tâm An" loading="lazy"></div><p><strong>Trang Tâm An</strong><span>Kênh cá nhân xây dựng nội dung đều đặn.</span></p></div>
+          </div>
         </div>
+        <div class="gallery-pagination swiper-pagination" aria-hidden="true"></div>
         <a class="cta" href="#dang-ky">Đăng ký tham gia miễn phí</a>
       </div>
     </section>
@@ -636,7 +671,7 @@
             <p><strong>Tham gia buổi học 2 tiếng hoàn toàn miễn phí.</strong></p>
             <a class="cta" href="#dang-ky">Đăng ký tham gia miễn phí</a>
           </div>
-          <div class="media-placeholder" aria-label="Vị trí video lời mời tham gia"><span>[VIDEO - Lời mời tham gia ngắn của Vũ Kim Khánh]<small>Placeholder video YouTube / TikTok</small></span></div>
+          <figure class="section-photo section-photo--final"><img src="assets/gallery/sections/final-stage.webp" alt="Vũ Kim Khánh chia sẻ trên sân khấu trong một chương trình đào tạo thực tế" loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </section>
@@ -661,24 +696,80 @@
       <p class="disclaimer-note">Chương trình không cam kết người tham gia sẽ tạo ra thu nhập trong 4 ngày. Kết quả phụ thuộc vào chuyên môn, thị trường, mức độ thực hành và khả năng triển khai của mỗi người.</p>
     </div>
   </footer>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script defer>
-    (() => {
+    window.addEventListener('DOMContentLoaded', () => {
       const eventsTrack = document.querySelector('.events-track');
-      document.querySelectorAll('[data-event-scroll]').forEach((button) => {
-        button.addEventListener('click', () => {
-          if (!eventsTrack) return;
-          const direction = button.dataset.eventScroll === 'next' ? 1 : -1;
-          eventsTrack.scrollBy({ left: direction * eventsTrack.clientWidth * .82, behavior: 'smooth' });
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.Swiper) {
+        const carouselOptions = () => ({
+          slidesPerView: 'auto',
+          grabCursor: true,
+          touchAngle: 30,
+          threshold: 6,
+          resistanceRatio: .65,
+          speed: reducedMotion ? 0 : 480,
+          watchOverflow: true,
+          freeMode: reducedMotion ? false : {
+            enabled: true,
+            momentum: true,
+            momentumRatio: .7,
+            momentumVelocityRatio: .85,
+            momentumBounce: false,
+            minimumVelocity: .03,
+            sticky: true
+          },
+          a11y: {
+            enabled: true,
+            prevSlideMessage: 'Ảnh trước',
+            nextSlideMessage: 'Ảnh tiếp theo',
+            firstSlideMessage: 'Đây là ảnh đầu tiên',
+            lastSlideMessage: 'Đây là ảnh cuối cùng'
+          }
         });
-      });
+        new Swiper('.events-slider', {
+          ...carouselOptions(),
+          spaceBetween: 20,
+          navigation: {
+            prevEl: '[data-event-scroll="prev"]',
+            nextEl: '[data-event-scroll="next"]'
+          },
+          breakpoints: {
+            0: { spaceBetween: 14 },
+            601: { spaceBetween: 18 },
+            901: { spaceBetween: 20 }
+          }
+        });
+        new Swiper('.proof-slider', {
+          ...carouselOptions(),
+          spaceBetween: 20,
+          pagination: {
+            el: document.querySelector('.gallery-pagination'),
+            clickable: true
+          },
+          breakpoints: {
+            0: { spaceBetween: 14 },
+            601: { spaceBetween: 18 },
+            901: { spaceBetween: 20 }
+          }
+        });
+      } else {
+        document.querySelectorAll('[data-event-scroll]').forEach((button) => {
+          button.addEventListener('click', () => {
+            if (!eventsTrack) return;
+            const direction = button.dataset.eventScroll === 'next' ? 1 : -1;
+            eventsTrack.scrollBy({ left: direction * eventsTrack.clientWidth * .82, behavior: 'smooth' });
+          });
+        });
+      }
       window.addEventListener('load', () => {
         if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         gsap.registerPlugin(ScrollTrigger);
         gsap.from('.hero-image img', { opacity: .45, scale: 1.045, duration: 1.4, ease: 'power2.out' });
         gsap.from('.hero-content > *', { opacity: 0, y: 18, duration: .78, stagger: .1, ease: 'power2.out', delay: .25 });
-        gsap.from('.pain-item', { opacity: 0, y: 26, duration: .68, stagger: .15, ease: 'power2.out', scrollTrigger: { trigger: '.pain-list', start: 'top 84%', once: true } });
+        gsap.from('.pain-item', { opacity: 0, duration: .55, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.pain-list', start: 'top 84%', once: true } });
         gsap.from('.machine-visual', { opacity: 0, x: 34, duration: .95, ease: 'power2.out', scrollTrigger: { trigger: '.machine-visual', start: 'top 85%', once: true } });
         document.querySelectorAll('.method-row').forEach((row) => {
           gsap.from(row.querySelector('.method-visual'), { opacity: 0, x: row.classList.contains('reverse') ? -32 : 32, scale: .97, duration: .9, ease: 'power2.out', scrollTrigger: { trigger: row, start: 'top 78%', once: true } });
@@ -686,10 +777,10 @@
         gsap.from('.audience-list li', { opacity: 0, y: 12, duration: .42, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.audience-list', start: 'top 82%', once: true } });
         gsap.from('.speaker-photo', { opacity: 0, y: 25, duration: .8, ease: 'power2.out', scrollTrigger: { trigger: '.speaker-photo', start: 'top 82%', once: true } });
         gsap.from('.event-card', { opacity: 0, x: 22, duration: .6, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.events-track', start: 'top 85%', once: true } });
-        gsap.from('.proof-card', { opacity: 0, y: 20, duration: .65, stagger: .14, ease: 'power2.out', scrollTrigger: { trigger: '.proof-grid', start: 'top 84%', once: true } });
+        gsap.from('.proof-card', { opacity: 0, duration: .5, stagger: .1, ease: 'power2.out', scrollTrigger: { trigger: '.proof-grid', start: 'top 84%', once: true } });
         gsap.from('.form-box', { opacity: 0, y: 22, duration: .78, ease: 'power2.out', scrollTrigger: { trigger: '.form-box', start: 'top 83%', once: true } });
       });
-    })();
+    });
   </script>
 </body>
 </html>
